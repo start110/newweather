@@ -13,7 +13,7 @@ public class City extends DataSupport {
     private String cityName;
 
     //城市的代号
-    private String cityCode;
+    private int cityCode;
     //当前市所属省份的id
     private int provinceId;
 
@@ -33,11 +33,11 @@ public class City extends DataSupport {
         this.provinceId = provinceId;
     }
 
-    public String getCityCode() {
+    public int getCityCode() {
         return cityCode;
     }
 
-    public void setCityCode(String cityCode) {
+    public void setCityCode(int cityCode) {
         this.cityCode = cityCode;
     }
 
