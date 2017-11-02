@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:background="@color/SpringGreen3"
+    >
+
+    <Button
+        android:id="@+id/bt_menu"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@mipmap/menu"
+        />
+    <TextView
+        android:id="@+id/title_city"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="标题"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        />
+    <Button
+        android:id="@+id/bt_home"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@mipmap/home1"
+        />
+
+</RelativeLayout>

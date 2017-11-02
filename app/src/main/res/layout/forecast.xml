@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@color/white"
+    >
+
+    <!--未来几天的天气信息-->
+    <ImageView
+        android:layout_marginLeft="10dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/forecast"
+        />
+    <LinearLayout
+
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5">
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/data"
+            />
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/wea"
+
+            />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:gravity="right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/max"
+            />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:gravity="right"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+        <ImageView
+            android:layout_marginRight="15dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@mipmap/min"
+            />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/forecast_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

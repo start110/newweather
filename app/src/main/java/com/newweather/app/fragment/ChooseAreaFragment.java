@@ -2,9 +2,11 @@ package com.newweather.app.fragment;
 
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +18,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.newweather.app.MainActivity;
 import com.newweather.app.R;
+import com.newweather.app.WeatherActivity;
 import com.newweather.app.entity.City;
 import com.newweather.app.entity.County;
 import com.newweather.app.entity.Province;
@@ -86,7 +90,7 @@ public class ChooseAreaFragment extends Fragment {
         adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, dataList);
         listView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-
+        Log.d("选择了该城市","");
         return view;
 
     }
@@ -105,6 +109,22 @@ public class ChooseAreaFragment extends Fragment {
                 } else if (currentLevel == LEVEL_CITY) {
                     selectedCity = cityList.get(i);
                     queryCounties();
+                }else if(currentLevel == LEVEL_COUNTY){
+                    String weatherId = countyList.get(i).getWeatherId();
+                    if(getActivity() instanceof MainActivity) {
+                        Intent intent = new Intent(getActivity(), WeatherActivity.class);
+                        intent.putExtra("weather_id", weatherId);
+                        Log.d("选择了该城市111111",weatherId+"dddd");
+                        startActivity(intent);
+                        getActivity().finish();
+                    }else if(getActivity() instanceof  WeatherActivity){
+                        WeatherActivity activity = (WeatherActivity) getActivity();
+                        activity.mDrawerLayout.closeDrawers();
+                        activity.mSwipeRefreshLayout.setRefreshing(true);
+                        activity.requestWeather(weatherId);
+                        Log.d("选择了该城市",weatherId+"dddd");
+
+                    }
                 }
             }
         });
@@ -203,12 +223,10 @@ public class ChooseAreaFragment extends Fragment {
      */
     private void queryFromServer( String url, final String type) {
         showProgressDialog();
-        Log.d("可以加载","9");
         HttpUtil.sendOkHttpRequest(url, new Callback() {
 
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.d("可以加载","10");
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -282,4 +300,6 @@ public class ChooseAreaFragment extends Fragment {
                     progressDialog.dismiss();
                 }
             }
+
+
 }
