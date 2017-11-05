@@ -23,7 +23,7 @@
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="欢迎使用每日天气"
+            android:text="欢迎使用非帆天气"
             android:textSize="18dp"
             />
         <TextView
