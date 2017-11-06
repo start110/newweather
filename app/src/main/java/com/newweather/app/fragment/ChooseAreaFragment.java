@@ -147,7 +147,7 @@ public class ChooseAreaFragment extends Fragment {
      */
     private void queryProvinces() {
 
-        titleText.setText("非帆天气");
+        titleText.setText("帆顺天气");
         backBt.setVisibility(View.GONE);
         provinceList = DataSupport.findAll(Province.class);
 
