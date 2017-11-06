@@ -1,5 +1,6 @@
 package com.newweather.app;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 
 import com.newweather.app.utils.PrefUtils;
 
-public class BoundActivity extends AppCompatActivity {
+public class BoundActivity extends Activity {
 
 
     private TextView mBtStart;
